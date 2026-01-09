@@ -11,11 +11,43 @@
 
 <p align="center">
   <a href="#功能特性">功能特性</a> •
+  <a href="#截图展示">截图展示</a> •
   <a href="#安装">安装</a> •
   <a href="#构建说明">构建说明</a> •
   <a href="#使用方法">使用方法</a> •
   <a href="#致谢">致谢</a>
 </p>
+
+---
+
+## 截图展示
+
+<p align="center">
+  <img src="images/04.main.png" width="600" alt="主界面 - 进程列表">
+</p>
+
+<p align="center">
+  <em>主界面 - 进程列表与代理注入</em>
+</p>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/03.settings.png" width="300" alt="设置页面">
+      <br><em>设置 - 代理配置与监控列表</em>
+    </td>
+    <td align="center">
+      <img src="images/02.log.png" width="300" alt="日志页面">
+      <br><em>日志 - 连接记录</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="images/01.help.png" width="400" alt="帮助页面">
+      <br><em>帮助 - 使用指南</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
