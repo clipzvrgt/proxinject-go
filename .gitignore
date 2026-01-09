@@ -1,0 +1,28 @@
+# Build outputs
+build/
+*.exe
+*.msi
+*.wixpdb
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (frontend)
+frontend/node_modules/
+frontend/dist/
+
+# Wails
+frontend/wailsjs/
+
+# Temporary files
+*.tmp
+*.log
+
+# Seafile conflict files
+*SFConflict*
