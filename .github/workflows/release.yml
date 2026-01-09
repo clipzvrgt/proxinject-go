@@ -116,19 +116,23 @@ jobs:
           $version = "${{ steps.version.outputs.VERSION }}"
           $zipName = "Proxinject-$version-windows-amd64.zip"
           $stagingDir = "staging"
+          $resourcesDir = "$stagingDir/resources"
           
-          # Create staging directory
+          # Create staging directories
           New-Item -ItemType Directory -Force -Path $stagingDir
+          New-Item -ItemType Directory -Force -Path $resourcesDir
           
-          # Copy exe and DLLs to staging
+          # Copy exe to staging root
           Copy-Item "build/bin/Proxinject.exe" -Destination $stagingDir
-          Copy-Item "resources/*.dll" -Destination $stagingDir
+          
+          # Copy DLLs to resources subfolder
+          Copy-Item "resources/*.dll" -Destination $resourcesDir
           
           # Create zip
           Compress-Archive -Path "$stagingDir/*" -DestinationPath $zipName -Force
           
           Write-Host "Created $zipName with contents:"
-          Get-ChildItem $stagingDir
+          Get-ChildItem $stagingDir -Recurse
 
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
