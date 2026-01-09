@@ -76,11 +76,31 @@ jobs:
       - name: Build MSI Installer
         run: wix build -o Proxinject-${{ steps.version.outputs.VERSION }}-installer.msi build/windows/msi/Package.wxs
 
-      - name: Upload EXE artifact
+      - name: Create ZIP package
+        shell: pwsh
+        run: |
+          $version = "${{ steps.version.outputs.VERSION }}"
+          $zipName = "Proxinject-$version-windows-amd64.zip"
+          $stagingDir = "staging"
+          
+          # Create staging directory
+          New-Item -ItemType Directory -Force -Path $stagingDir
+          
+          # Copy exe and DLLs to staging
+          Copy-Item "build/bin/Proxinject.exe" -Destination $stagingDir
+          Copy-Item "resources/*.dll" -Destination $stagingDir
+          
+          # Create zip
+          Compress-Archive -Path "$stagingDir/*" -DestinationPath $zipName -Force
+          
+          Write-Host "Created $zipName with contents:"
+          Get-ChildItem $stagingDir
+
+      - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Proxinject-${{ steps.version.outputs.VERSION }}-exe
-          path: build/bin/Proxinject.exe
+          name: Proxinject-${{ steps.version.outputs.VERSION }}-zip
+          path: Proxinject-${{ steps.version.outputs.VERSION }}-windows-amd64.zip
 
       - name: Upload MSI artifact
         uses: actions/upload-artifact@v4
@@ -97,7 +117,7 @@ jobs:
           prerelease: false
           generate_release_notes: true
           files: |
-            build/bin/Proxinject.exe
+            Proxinject-${{ steps.version.outputs.VERSION }}-windows-amd64.zip
             Proxinject-${{ steps.version.outputs.VERSION }}-installer.msi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
