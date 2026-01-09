@@ -123,13 +123,14 @@ jobs:
           path: Proxinject-${{ steps.version.outputs.VERSION }}-installer.msi
 
       - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          name: Proxinject ${{ steps.version.outputs.VERSION }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('dev-{0}', github.sha) }}
+          name: ${{ startsWith(github.ref, 'refs/tags/') && format('Proxinject {0}', steps.version.outputs.VERSION) || format('Dev Build {0}', steps.version.outputs.VERSION) }}
           draft: false
-          prerelease: false
-          generate_release_notes: true
+          prerelease: ${{ !startsWith(github.ref, 'refs/tags/') }}
+          generate_release_notes: ${{ startsWith(github.ref, 'refs/tags/') }}
+          body: ${{ !startsWith(github.ref, 'refs/tags/') && format('Development build from commit {0}', github.sha) || '' }}
           files: |
             Proxinject-${{ steps.version.outputs.VERSION }}-windows-amd64.zip
             Proxinject-${{ steps.version.outputs.VERSION }}-installer.msi
