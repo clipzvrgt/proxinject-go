@@ -1,5 +1,5 @@
-# Build outputs
-build/
+# Build outputs (compiled binaries)
+build/bin/
 *.exe
 *.msi
 *.wixpdb

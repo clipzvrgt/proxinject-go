@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="Proxinject" 
+           Manufacturer="yangfan" 
+           Version="1.0.0.0" 
+           UpgradeCode="E8F1B2C3-D4E5-F6A7-B8C9-0A1B2C3D4E5F"
+           Scope="perMachine"
+           InstallerVersion="500">
+    
+    <!-- Auto-uninstall previous versions when upgrading -->
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." 
+                  Schedule="afterInstallInitialize" />
+    <MediaTemplate EmbedCab="yes" />
+    
+    <Feature Id="ProductFeature" Title="Proxinject" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="ResourceComponents" />
+      <ComponentRef Id="ProgramMenuShortcut" />
+      <ComponentRef Id="DesktopShortcut" />
+    </Feature>
+    
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="Proxinject">
+        <Directory Id="ResourcesFolder" Name="resources" />
+      </Directory>
+    </StandardDirectory>
+    
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="Proxinject" />
+    </StandardDirectory>
+    
+    <StandardDirectory Id="DesktopFolder" />
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="A1B2C3D4-E5F6-7890-ABCD-EF1234567890">
+        <File Id="ProxinjectExe" Source="..\..\bin\Proxinject.exe" Name="Proxinject.exe" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+    
+    <ComponentGroup Id="ResourceComponents" Directory="ResourcesFolder">
+      <Component Id="ProxinjectFFI" Guid="B2C3D4E5-F6A7-8901-BCDE-F12345678901">
+        <File Id="ProxinjectFFIDll" Source="..\..\bin\resources\proxinject_ffi.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Proxinjectee" Guid="C3D4E5F6-A7B8-9012-CDEF-123456789012">
+        <File Id="ProxinjecteeDll" Source="..\..\bin\resources\proxinjectee.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Proxinjectee32" Guid="D4E5F6A7-B8C9-0123-DEF0-234567890123">
+        <File Id="Proxinjectee32Dll" Source="..\..\bin\resources\proxinjectee32.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="ProxinjecteeRs" Guid="E5F6A7B8-C9D0-1234-EF01-345678901234">
+        <File Id="ProxinjecteeRsDll" Source="..\..\bin\resources\proxinjectee_rs.dll" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+    
+    <Component Id="ProgramMenuShortcut" Guid="F6A7B8C9-D0E1-2345-F012-456789012345" Directory="ApplicationProgramsFolder">
+      <Shortcut Id="ApplicationStartMenuShortcut"
+                Name="Proxinject"
+                Description="Proxinject Application"
+                Target="[INSTALLFOLDER]Proxinject.exe"
+                WorkingDirectory="INSTALLFOLDER" />
+      <!-- Uninstall shortcut in Start Menu -->
+      <Shortcut Id="UninstallShortcut"
+                Name="Uninstall Proxinject"
+                Description="Uninstall Proxinject"
+                Target="[System64Folder]msiexec.exe"
+                Arguments="/x [ProductCode]" />
+      <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall" />
+      <RegistryValue Root="HKCU" Key="Software\Proxinject" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+    
+    <Component Id="DesktopShortcut" Guid="A7B8C9D0-E1F2-3456-0123-567890123456" Directory="DesktopFolder">
+      <Shortcut Id="ApplicationDesktopShortcut"
+                Name="Proxinject"
+                Description="Proxinject Application"
+                Target="[INSTALLFOLDER]Proxinject.exe"
+                WorkingDirectory="INSTALLFOLDER" />
+      <RegistryValue Root="HKCU" Key="Software\Proxinject" Name="desktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+    
+  </Package>
+</Wix>
