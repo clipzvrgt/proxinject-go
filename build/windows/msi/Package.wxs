@@ -33,22 +33,22 @@
     
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="MainExecutable" Guid="A1B2C3D4-E5F6-7890-ABCD-EF1234567890">
-        <File Id="ProxinjectExe" Source="..\..\bin\Proxinject.exe" Name="Proxinject.exe" KeyPath="yes" />
+        <File Id="ProxinjectExe" Source="..\..\..\build\bin\Proxinject.exe" Name="Proxinject.exe" KeyPath="yes" />
       </Component>
     </ComponentGroup>
     
     <ComponentGroup Id="ResourceComponents" Directory="ResourcesFolder">
       <Component Id="ProxinjectFFI" Guid="B2C3D4E5-F6A7-8901-BCDE-F12345678901">
-        <File Id="ProxinjectFFIDll" Source="..\..\bin\resources\proxinject_ffi.dll" KeyPath="yes" />
+        <File Id="ProxinjectFFIDll" Source="..\..\..\resources\proxinject_ffi.dll" KeyPath="yes" />
       </Component>
       <Component Id="Proxinjectee" Guid="C3D4E5F6-A7B8-9012-CDEF-123456789012">
-        <File Id="ProxinjecteeDll" Source="..\..\bin\resources\proxinjectee.dll" KeyPath="yes" />
+        <File Id="ProxinjecteeDll" Source="..\..\..\resources\proxinjectee.dll" KeyPath="yes" />
       </Component>
       <Component Id="Proxinjectee32" Guid="D4E5F6A7-B8C9-0123-DEF0-234567890123">
-        <File Id="Proxinjectee32Dll" Source="..\..\bin\resources\proxinjectee32.dll" KeyPath="yes" />
+        <File Id="Proxinjectee32Dll" Source="..\..\..\resources\proxinjectee32.dll" KeyPath="yes" />
       </Component>
       <Component Id="ProxinjecteeRs" Guid="E5F6A7B8-C9D0-1234-EF01-345678901234">
-        <File Id="ProxinjecteeRsDll" Source="..\..\bin\resources\proxinjectee_rs.dll" KeyPath="yes" />
+        <File Id="ProxinjecteeRsDll" Source="..\..\..\resources\proxinjectee_rs.dll" KeyPath="yes" />
       </Component>
     </ComponentGroup>
     
